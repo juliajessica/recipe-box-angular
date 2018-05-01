@@ -1,24 +1,27 @@
-<div>
-  <h1>{{title}}</h1>
-  <h2>Welcome, {{userName}}!</h2>
-  <form>
-    <input type="text" name="user" [(ngModel)]="userName">
-  </form>
-  <div class="card">
-    <div>
-      <ul>
-        <li *ngFor="let recipe of recipes" [class]="ratingRecipe(recipe)">{{recipe.name}} <button (click)="editRecipe(recipe)">Edit</button></li>
-      </ul>
+<div class="container">
+  <div class="well">
+    <h1>{{title}}</h1>
+    <h2>Welcome, {{userName}}!</h2>
+    <form>
+      <input type="text" name="user" [(ngModel)]="userName">
+    </form>
+    <div class="card">
+      <div>
+        <ul>
+          <li *ngFor="let recipe of recipes" [class]="ratingRecipe(recipe)">{{recipe.name}} <button (click)="editRecipe(recipe)">Edit</button></li>
+        </ul>
+      </div>
     </div>
   </div>
-</div>
-<div>
-  <h3>{{selectedRecipe.name}}</h3>
-  <p>Task Complete? {{selectedRecipe.done}}</p>
-  <h3>Edit Task</h3>
-  <label>Enter Recipe Name:</label>
-  <input [(ngModel)]="selectedRecipe.name">
-  <br>
-  <input type="radio" [(ngModel)]="selectedRecipe.done" value="true">true<br>
-  <input type="radio" [(ngModel)]="selectedRecipe.done" value="false">false<br>
+  <div class="well">
+    <h3>{{selectedRecipe.name}}</h3>
+    <p>Task Complete? {{selectedRecipe.done}}</p>
+    <h3>Edit Task</h3>
+    <label>Enter Recipe Name:</label>
+    <input [(ngModel)]="selectedRecipe.name">
+    <br>
+    <input type="radio" [(ngModel)]="selectedRecipe.done" value="true"> true<br>
+    <input type="radio" [(ngModel)]="selectedRecipe.done" value="false"> false<br>
+    <div *ngIf="property">Content!</div>
+  </div>
 </div>
