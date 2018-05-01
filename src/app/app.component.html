@@ -1,3 +1,15 @@
-<h1>
-  {{title}}
-</h1>
+<div>
+  <h1>{{title}}</h1>
+  <div class="card" *ngFor="let recipe of recipes">
+    <div [class]="ratingRecipe(recipe)">
+      <h3>{{recipe.name}}</h3>
+    </div>
+    <div class="card-body">
+      <ul>
+        <li *ngFor="let ingredient of recipe.ingredients">{{ingredient}}</li>
+      </ul>
+      <p>{{recipe.directions}}</p>
+      <button (click)="clickRecipe()">Click me!</button>
+    </div>
+  </div>
+</div>
