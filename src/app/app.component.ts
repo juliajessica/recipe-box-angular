@@ -28,10 +28,24 @@ export class AppComponent {
     this.selectedRecipe = clickedRecipe;
   }
 
-  selectedRecipe: Recipe = this.recipes[0];
+  recipeDetails(clickedRecipe){
+    this.selectedRecipe = clickedRecipe;
+  }
 
-  // completeRecipe(){
-  //   alert("Congratulations on completing your recipe!")
+  selectedRecipe = null;
+
+
+  finishedEditing(){
+    this.selectedRecipe = null;
+  }
+
+  // checkedTriedIt(selectedRecipe){
+  //   // alert("mouseup works");
+  //   if (this.selectedRecipe.done) {
+  //     return this.selectedRecipe.triedStatus = "made it!";
+  //   } else {
+  //     return this.selectedRecipe.triedStatus = "haven't tried it!";
+  //   }
   // }
 
 }

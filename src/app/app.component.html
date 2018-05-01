@@ -3,25 +3,40 @@
     <h1>{{title}}</h1>
     <h2>Welcome, {{userName}}!</h2>
     <form>
-      <input type="text" name="user" [(ngModel)]="userName">
+      <input type="text" name="user" [(ngModel)]="userName" class="form-control" placeholder="enter your name">
+    <br>
     </form>
     <div class="card">
       <div>
         <ul>
-          <li *ngFor="let recipe of recipes" [class]="ratingRecipe(recipe)">{{recipe.name}} <button (click)="editRecipe(recipe)">Edit</button></li>
+          <li *ngFor="let recipe of recipes" [class]="ratingRecipe(recipe)">{{recipe.name}} <button (mouseover)="editRecipe(recipe)" class="btn btn-info">Edit</button><button (click)="recipeDetails(recipe)" class="btn btn-primary">Instructions</button></li>
         </ul>
       </div>
     </div>
   </div>
-  <div class="well">
-    <h3>{{selectedRecipe.name}}</h3>
-    <p>Task Complete? {{selectedRecipe.done}}</p>
-    <h3>Edit Task</h3>
+  <div class="well" *ngIf="selectedRecipe">
+    <div class="well">
+      <div class="header">
+        <h3>{{selectedRecipe.name}}</h3>
+      </div>
+      <div class="body">
+        <h4>Ingredients</h4>
+        <ul>
+          <li *ngFor="let ingredient of selectedRecipe.ingredients">{{ingredient}}</li>
+        </ul>
+        <h4>Directions</h4>
+        <p>{{selectedRecipe.directions}}</p>
+        <h4>Have you tried it?</h4>
+        <p>{{selectedRecipe.done}}</p>
+      </div>
+    </div>
+    <h3>Edit Recipe</h3>
     <label>Enter Recipe Name:</label>
     <input [(ngModel)]="selectedRecipe.name">
     <br>
-    <input type="radio" [(ngModel)]="selectedRecipe.done" value="true"> true<br>
-    <input type="radio" [(ngModel)]="selectedRecipe.done" value="false"> false<br>
-    <div *ngIf="property">Content!</div>
+    <input type="radio" [(ngModel)]="selectedRecipe.done" value="true"> made it<br>
+    <input type="radio" [(ngModel)]="selectedRecipe.done" value="false"> haven't tried it<br>
+    <br>
+    <button (click)="finishedEditing()">Done</button>
   </div>
 </div>
