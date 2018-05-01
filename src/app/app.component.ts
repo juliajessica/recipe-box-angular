@@ -24,7 +24,15 @@ export class AppComponent {
     }
   }
 
-  clickRecipe() {
-    alert('Happy Eating!');
+  editRecipe(clickedRecipe){
+    this.selectedRecipe = clickedRecipe;
+    alert("you are editing a recipe");
   }
+
+  selectedRecipe: Recipe = this.recipes[0];
+
+  // completeRecipe(){
+  //   alert("Congratulations on completing your recipe!")
+  // }
+
 }
