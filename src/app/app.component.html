@@ -29,11 +29,15 @@
         <h4>Have you tried it?</h4>
         <p>{{selectedRecipe.done}}</p>
       </div>
-    </div>
-    <h3>Edit Recipe</h3>
     <label>Enter Recipe Name:</label>
-    <input [(ngModel)]="selectedRecipe.name">
+    <input [(ngModel)]="selectedRecipe.name" class="form-control">
     <br>
+    <input [(ngModel)]="selectedRecipe.directions" class="form-control">
+    <br>
+    <!-- <input [(ngModel)]="selectedRecipe.ingredients[0]" class="form-control">
+  <!--   <input [(ngModel)]="selectedRecipe.ingredients[1]" class="form-control">
+    <input [(ngModel)]="selectedRecipe.ingredients[2]" class="form-control"> --> -->
+    <h4>Status</h4>
     <input type="radio" [(ngModel)]="selectedRecipe.done" value="true"> made it<br>
     <input type="radio" [(ngModel)]="selectedRecipe.done" value="false"> haven't tried it<br>
     <br>

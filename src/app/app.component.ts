@@ -48,4 +48,9 @@ export class AppComponent {
   //   }
   // }
 
+  // recipes.forEach(function(recipe.ingredient){
+  //   return recipe.ingredient;
+  // });
+//   recipes.forEach($scope.data, function(recipe.ingredients){});
+//   return recipe.ingredients;
 }
