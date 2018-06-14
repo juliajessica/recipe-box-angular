@@ -1,6 +1,7 @@
 # RecipeBox
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
+This is a single page application generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0. It's a recipe box where you can add and remove recipes from your recipe box. 
+
 
 ## Development server
 
